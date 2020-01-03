@@ -1,0 +1,7 @@
+ARG_ENABLE('memcached-hashkit', 'memcached_hashkit support', 'no');
+
+if (PHP_MEMCACHED_HASHKIT != 'no') {
+	AC_DEFINE('HAVE_MEMCACHED_HASHKIT', 1, 'memcached_hashkit support enabled');
+
+	EXTENSION('memcached_hashkit', 'memcached_hashkit.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}

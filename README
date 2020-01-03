@@ -1,0 +1,19 @@
+Memcached Hash Kit
+==================
+
+Memcached_hashkit is an extract from libmemcached of few hashing algorithms.
+It's intended to be used with the composer package djiele/ext-php-memcached
+(https://packagist.org/packages/djiele/ext-php-memcached) to bring Windows
+users more compatibility with the original memcached.so unix extension
+Seven function are exposed:
+
+proto int memcached_hashkit_one_at_a_time(string $value)
+proto int memcached_hashkit_murmur(string $value)
+proto int memcached_hashkit_hsieh(string $value)
+proto int memcached_hashkit_fnv1_64(string $value)
+proto int memcached_hashkit_fnv1a_64(string $value)
+proto int memcached_hashkit_fnv1_32(string $value)
+proto int memcached_hashkit_fnv1a_32(string $value)
+
+This extension is maintained at https://github.com/djiele/memcached_hashkit
+Windows binaries can be found at https://www.djiele.net/memcached_hashkit
