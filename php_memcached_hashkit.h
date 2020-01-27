@@ -37,6 +37,10 @@ PHP_FUNCTION(memcached_hashkit_fnv1_64);
 PHP_FUNCTION(memcached_hashkit_fnv1a_64);
 PHP_FUNCTION(memcached_hashkit_fnv1_32);
 PHP_FUNCTION(memcached_hashkit_fnv1a_32);
+PHP_FUNCTION(memcached_hashkit_jenkins);
+PHP_FUNCTION(memcached_hashkit_md5);
+PHP_FUNCTION(memcached_hashkit_md5_signature);
+PHP_FUNCTION(memcached_hashkit_crc32);
 /* }}} */
 
 # if defined(ZTS) && defined(COMPILE_DL_MEMCACHED_HASHKIT)

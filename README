@@ -5,8 +5,11 @@ Memcached_hashkit is an extract from libmemcached of few hashing algorithms.
 It's intended to be used with the composer package djiele/ext-php-memcached
 (https://packagist.org/packages/djiele/ext-php-memcached) to bring Windows
 users more compatibility with the original memcached.so unix extension
-Seven function are exposed:
+Ten functions are exposed:
 
+proto int memcached_hashkit_crc32(string $value)
+proto int memcached_hashkit_md5(string $value)
+proto int memcached_hashkit_jenkins(string $value)
 proto int memcached_hashkit_one_at_a_time(string $value)
 proto int memcached_hashkit_murmur(string $value)
 proto int memcached_hashkit_hsieh(string $value)

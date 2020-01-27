@@ -11,7 +11,9 @@
 #include "memcached_hashkit_murmur.c"
 #include "memcached_hashkit_hsieh.c"
 #include "memcached_hashkit_fnv.c"
-
+#include "memcached_hashkit_jenkins.c"
+#include "memcached_hashkit_md5.c"
+#include "memcached_hashkit_crc32.c"
 
 /* {{{ PHP_MINIT_FUNCTION
  */
@@ -94,6 +96,23 @@ ZEND_END_ARG_INFO()
 ZEND_BEGIN_ARG_INFO(arginfo_memcached_hashkit_fnv1a_32, 0)
 	ZEND_ARG_INFO(0, str)
 ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO(arginfo_memcached_hashkit_jenkins, 0)
+	ZEND_ARG_INFO(0, str)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO(arginfo_memcached_hashkit_md5, 0)
+	ZEND_ARG_INFO(0, str)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO_EX(arginfo_memcached_hashkit_md5_signature, 0, 0, 2)
+	ZEND_ARG_INFO(0, str)
+    ZEND_ARG_ARRAY_INFO(1, result, 0)
+ZEND_END_ARG_INFO()
+
+ZEND_BEGIN_ARG_INFO(arginfo_memcached_hashkit_crc32, 0)
+	ZEND_ARG_INFO(0, str)
+ZEND_END_ARG_INFO()
 /* }}} */
 
 /* {{{ memcached_hashkit_functions[]
@@ -106,6 +125,10 @@ static const zend_function_entry memcached_hashkit_functions[] = {
 	PHP_FE(memcached_hashkit_fnv1a_64,		    arginfo_memcached_hashkit_fnv1a_64)
 	PHP_FE(memcached_hashkit_fnv1_32,		    arginfo_memcached_hashkit_fnv1_32)
 	PHP_FE(memcached_hashkit_fnv1a_32,		    arginfo_memcached_hashkit_fnv1a_32)
+	PHP_FE(memcached_hashkit_jenkins,		    arginfo_memcached_hashkit_jenkins)
+	PHP_FE(memcached_hashkit_md5,		        arginfo_memcached_hashkit_md5)
+	PHP_FE(memcached_hashkit_md5_signature,     arginfo_memcached_hashkit_md5_signature)
+	PHP_FE(memcached_hashkit_crc32,		        arginfo_memcached_hashkit_crc32)
 	PHP_FE_END
 };
 /* }}} */
